@@ -9,7 +9,6 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN docker-php-ext-install mysqli
 RUN cd /root/
 RUN git clone https://github.com/mugerwae/medsave-ai.git
-RUN ls medsave-ai/medsave
-# RUN mv medsave-ai/medsave/ /var/www/html/
-# RUN rm -r medsave-ai
+RUN mv medsave-ai/medsave/php/* /var/www/html/
+RUN rm -r medsave-ai
 WORKDIR /var/www/html/
